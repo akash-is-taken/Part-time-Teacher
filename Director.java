@@ -9,24 +9,25 @@ public class Director {
         this.passwordHash = passwordHash;
     }
 
+    // New method for password verification
+    public boolean authenticate(String inputPassword) {
+        return this.passwordHash.equals(inputPassword);
+    }
 
     public void addRequirement(TeachingRequirements teachingRequirements, Course course, int slotsRequired) {
         System.out.println(name + " is adding a new requirement...");
         teachingRequirements.addCourse(course, slotsRequired);
     }
 
-
     public void viewRequirements(TeachingRequirements teachingRequirements) {
         System.out.println(name + " is viewing teaching requirements...");
         teachingRequirements.viewRequirements();
     }
 
-
-    public void saveRequirementsToFile(TeachingRequirements teachingRequirements, FileManager FileManager, String filepath) {
+    public void saveRequirementsToFile(TeachingRequirements teachingRequirements, FileManager fileManager, String filepath) {
         System.out.println(name + " is saving teaching requirements to file...");
-        teachingRequirements.saveRequirementsToFile(FileManager, filepath);
+        teachingRequirements.saveRequirementsToFile(fileManager, filepath);
     }
-
 
     public String getName() {
         return name;
@@ -39,3 +40,4 @@ public class Director {
     public String getPasswordHash() {
         return passwordHash;
     }
+}

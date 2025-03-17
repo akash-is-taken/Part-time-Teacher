@@ -9,7 +9,6 @@ public class Course {
         this.trainingSessions = trainingSessions;
     }
 
-
     public static Course createCourse(int id, String name, int trainingSessions) {
         return new Course(id, name, trainingSessions);
     }
@@ -20,11 +19,9 @@ public class Course {
         System.out.println("Course updated: ID " + id + ", Name: " + name + ", Training Sessions: " + trainingSessions);
     }
 
-
     public void deleteCourse() {
         System.out.println("Course deleted: ID " + id + ", Name: " + name);
     }
-
 
     public int getId() {
         return id;
